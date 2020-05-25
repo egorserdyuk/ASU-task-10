@@ -11,6 +11,8 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
+        int rowHeight = 22;
+        int colWidth = 44;
         public Form1()
         {
             InitializeComponent();
@@ -59,49 +61,161 @@ namespace WindowsFormsApplication2
 
         }
 
+        //строки матрицы А
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int rowHeight = 22;
-            int colWidth = 44;
+            
 
             //очистка матриц
             this.dataGridView1.Rows.Clear();
-            this.dataGridView2.Rows.Clear();
             this.dataGridView3.Rows.Clear();
 
             //видимость матриц
 
             this.dataGridView1.Visible = true;
+            this.dataGridView3.Visible = false;
 
-            if (comboBox2.SelectedIndex<3)
-            {
-                this.dataGridView2.Visible = true;
-            }
-            
 
             //задаем кол-во столбцов
-            this.dataGridView1.ColumnCount = comboBox1.SelectedIndex+2;
-            this.dataGridView2.ColumnCount = comboBox1.SelectedIndex + 2;
+            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex+2;
+            //this.dataGridView3.ColumnCount = comboBox2.SelectedIndex + 2;
 
             //добавляем строки
-            for (int i=0; i<comboBox1.SelectedIndex+2; i++)
+            for (int i=0; i< comboBox1.SelectedIndex + 2; i++)
             {
                 this.dataGridView1.Rows.Add();
-                this.dataGridView2.Rows.Add();
+                this.dataGridView3.Rows.Add();
             }
 
             //устанавливаем размеры строк
             for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
             {
                 dataGridView1.Columns[i].Width = colWidth;
-                dataGridView2.Columns[i].Width = colWidth;
+                
 
                 dataGridView1.Width = colWidth * this.dataGridView1.ColumnCount;
+                
+
+                dataGridView1.Height = rowHeight * this.dataGridView1.RowCount;
+
+            }
+        }
+
+        //Столбцы матрицы А
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //очистка матриц
+            this.dataGridView1.Rows.Clear();
+            this.dataGridView3.Rows.Clear();
+
+            //видимость матриц
+
+            this.dataGridView1.Visible = true;
+            this.dataGridView3.Visible = false;
+
+
+            //задаем кол-во столбцов
+            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex + 2;
+            //this.dataGridView3.ColumnCount = comboBox2.SelectedIndex + 2;
+
+            //добавляем строки
+            for (int i = 0; i < comboBox1.SelectedIndex + 2; i++)
+            {
+                this.dataGridView1.Rows.Add();
+                this.dataGridView3.Rows.Add();
+            }
+
+            //устанавливаем размеры строк
+            for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].Width = colWidth;
+
+
+                dataGridView1.Width = colWidth * this.dataGridView1.ColumnCount;
+
+
+                dataGridView1.Height = rowHeight * this.dataGridView1.RowCount;
+
+            }
+        }
+
+        //Строки матрицы B
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            //очистка матриц
+            this.dataGridView2.Rows.Clear();
+            this.dataGridView3.Rows.Clear();
+
+            //видимость матриц
+
+            this.dataGridView2.Visible = true;
+            this.dataGridView3.Visible = false;
+
+
+
+            //задаем кол-во столбцов
+            this.dataGridView2.ColumnCount = comboBox5.SelectedIndex + 2;
+            //this.dataGridView3.ColumnCount = comboBox2.SelectedIndex + 2;
+
+            //добавляем строки
+            for (int i = 0; i < comboBox3.SelectedIndex + 2; i++)
+            {
+                this.dataGridView2.Rows.Add();
+            }
+
+            //устанавливаем размеры строк
+            for (int i = 0; i < this.dataGridView2.ColumnCount; i++)
+            {
+                dataGridView2.Columns[i].Width = colWidth;
+
+
                 dataGridView2.Width = colWidth * this.dataGridView2.ColumnCount;
 
-                dataGridView1.Height = rowHeight * this.dataGridView1.ColumnCount;
-                dataGridView2.Height = rowHeight * this.dataGridView2.ColumnCount;
+
+                dataGridView2.Height = rowHeight * this.dataGridView2.RowCount;
+
+            }
+        }
+
+        //Столбцы матрицы В
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //очистка матриц
+            this.dataGridView2.Rows.Clear();
+            
+
+            //видимость матриц
+
+            this.dataGridView2.Visible = true;
+            this.dataGridView3.Visible = false;
+
+
+
+            //задаем кол-во столбцов
+            this.dataGridView2.ColumnCount = comboBox5.SelectedIndex + 2;
+            //this.dataGridView3.ColumnCount = comboBox2.SelectedIndex + 2;
+
+            //добавляем строки
+            for (int i = 0; i < comboBox3.SelectedIndex + 2; i++)
+            {
+                this.dataGridView2.Rows.Add();
+            }
+
+            //устанавливаем размеры строк
+            for (int i = 0; i < this.dataGridView2.ColumnCount; i++)
+            {
+                dataGridView2.Columns[i].Width = colWidth;
+
+
+                dataGridView2.Width = colWidth * this.dataGridView2.ColumnCount;
+
+
+                dataGridView2.Height = rowHeight * this.dataGridView2.RowCount;
+
             }
         }
 
@@ -114,15 +228,18 @@ namespace WindowsFormsApplication2
         {
             if(comboBox2.SelectedIndex<3)
             {
-                dataGridView1.Visible = true;
-                dataGridView2.Visible = true;
                 label3.Visible = false;
+                label5.Visible = true;
+                comboBox3.Visible = true;
                 textBox1.Visible = false;
+
             }
             else
             {
                 dataGridView2.Visible = false;
                 label3.Visible = true;
+                label5.Visible = false;
+                comboBox3.Visible = false;
                 textBox1.Visible = true;
             }
         }
@@ -143,15 +260,20 @@ namespace WindowsFormsApplication2
             this.dataGridView1.Rows.Clear();
             this.dataGridView2.Rows.Clear();
             this.dataGridView3.Rows.Clear();
+            dataGridView3.Visible = false;
 
             //задаем кол-во столбцов
-            this.dataGridView1.ColumnCount = comboBox1.SelectedIndex + 2;
-            this.dataGridView2.ColumnCount = comboBox1.SelectedIndex + 2;
+            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex + 2;
+            this.dataGridView2.ColumnCount = comboBox5.SelectedIndex + 2;
 
             //добавляем строки
             for (int i = 0; i < comboBox1.SelectedIndex + 2; i++)
             {
                 this.dataGridView1.Rows.Add();
+            }
+
+            for (int i = 0; i < comboBox3.SelectedIndex + 2; i++)
+            {
                 this.dataGridView2.Rows.Add();
             }
 
@@ -167,5 +289,57 @@ namespace WindowsFormsApplication2
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.dataGridView3.Rows.Clear();
+            this.dataGridView3.ColumnCount = dataGridView2.ColumnCount;
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                this.dataGridView3.Rows.Add();
+            }
+
+            for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+            {
+                dataGridView3.Columns[i].Width = colWidth;
+
+                dataGridView3.Width = colWidth * this.dataGridView2.ColumnCount;
+
+                dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+            }
+            dataGridView3.Visible = true;
+            //умножение матриц
+            if (comboBox2.SelectedIndex == 0)
+            {
+                if (dataGridView1.ColumnCount != dataGridView2.RowCount)
+                {
+                    this.warning_label.Visible = true;
+                }
+                else
+                {
+                    warning_label.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView2.ColumnCount;
+                    int n = dataGridView2.RowCount;
+                    dataGridView3.Visible = true;
+                    int value;
+                    for (int i = 0; i < m; i++)
+                        for (int j = 0; j < q; j++)
+                        {
+                            dataGridView3[j, i].Value = 0;
+                            for (int k = 0; k < n; k++)
+                            {
+                                value = Convert.ToInt32(dataGridView3[j, i].Value);
+                                value += Convert.ToInt32(dataGridView1[k, i].Value) * Convert.ToInt32(dataGridView2[j, k].Value);
+                                dataGridView3[j, i].Value = value;
+                            }
+                        }
+                }
+            }
+            
+        }
+
+
     }
 }
