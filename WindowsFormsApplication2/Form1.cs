@@ -398,6 +398,54 @@ namespace WindowsFormsApplication2
                         dataGridView3[j, i].Value = value;
                     }
             }
+
+            if (comboBox2.SelectedIndex == 1)
+            {
+                if (dataGridView1.ColumnCount != dataGridView2.RowCount)
+                {
+                    this.warning_label.Visible = true;
+                    dataGridView3.Visible = false;
+                }
+                else
+                {
+                    warning_label.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                    for (int j = 0; j < q; j++)
+                    {
+                        value = Convert.ToDouble(dataGridView1[j, i].Value);
+                        value += Convert.ToDouble(dataGridView2[j, i].Value);
+                        dataGridView3[j, i].Value = value;
+                    }
+                }
+            }
+
+            if (comboBox2.SelectedIndex == 2)
+            {
+                if (dataGridView1.ColumnCount != dataGridView2.RowCount)
+                {
+                    this.warning_label.Visible = true;
+                    dataGridView3.Visible = false;
+                }
+                else
+                {
+                    warning_label.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                    for (int j = 0; j < q; j++)
+                    {
+                        value = Convert.ToDouble(dataGridView1[j, i].Value);
+                        value -= Convert.ToDouble(dataGridView2[j, i].Value);
+                        dataGridView3[j, i].Value = value;
+                    }
+                }
+            }
         }    
 
 
