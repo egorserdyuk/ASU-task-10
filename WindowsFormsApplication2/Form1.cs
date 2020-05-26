@@ -350,15 +350,15 @@ namespace WindowsFormsApplication2
                     int q = dataGridView2.ColumnCount;
                     int n = dataGridView2.RowCount;
                     dataGridView3.Visible = true;
-                    int value;
+                    double value;
                     for (int i = 0; i < m; i++)
                         for (int j = 0; j < q; j++)
                         {
                             dataGridView3[j, i].Value = 0;
                             for (int k = 0; k < n; k++)
                             {
-                                value = Convert.ToInt32(dataGridView3[j, i].Value);
-                                value += Convert.ToInt32(dataGridView1[k, i].Value) * Convert.ToInt32(dataGridView2[j, k].Value);
+                                value = Convert.ToDouble(dataGridView3[j, i].Value);
+                                value += Convert.ToDouble(dataGridView1[k, i].Value) * Convert.ToDouble(dataGridView2[j, k].Value);
                                 dataGridView3[j, i].Value = value;
                             }
                         }
@@ -372,12 +372,12 @@ namespace WindowsFormsApplication2
                 int m = dataGridView1.RowCount;
                 int q = dataGridView1.ColumnCount;
                 dataGridView3.Visible = true;
-                int value;
+                double value;
                 for (int i = 0; i < m; i++)
                     for (int j = 0; j < q; j++)
                     {
                             value = Convert.ToInt32(dataGridView1[j, i].Value);
-                        value *= Convert.ToInt32(textBox1.Text);
+                        value *= Convert.ToDouble(textBox1.Text);
                             dataGridView3[j, i].Value = value;
                     }
              }
