@@ -11,11 +11,8 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
-<<<<<<< HEAD
         int rowHeight = 22;
         int colWidth = 44;
-=======
->>>>>>> Добавьте файлы проекта.
         public Form1()
         {
             InitializeComponent();
@@ -64,7 +61,6 @@ namespace WindowsFormsApplication2
 
         }
 
-<<<<<<< HEAD
         //строки матрицы А
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -73,23 +69,11 @@ namespace WindowsFormsApplication2
 
             //очистка матриц
             this.dataGridView1.Rows.Clear();
-=======
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int rowHeight = 22;
-            int colWidth = 44;
-
-            //очистка матриц
-            this.dataGridView1.Rows.Clear();
-            this.dataGridView2.Rows.Clear();
->>>>>>> Добавьте файлы проекта.
             this.dataGridView3.Rows.Clear();
 
             //видимость матриц
 
             this.dataGridView1.Visible = true;
-<<<<<<< HEAD
             this.dataGridView3.Visible = false;
 
 
@@ -141,31 +125,12 @@ namespace WindowsFormsApplication2
             {
                 this.dataGridView1.Rows.Add();
                 this.dataGridView3.Rows.Add();
-=======
-
-            if (comboBox2.SelectedIndex<3)
-            {
-                this.dataGridView2.Visible = true;
-            }
-            
-
-            //задаем кол-во столбцов
-            this.dataGridView1.ColumnCount = comboBox1.SelectedIndex+2;
-            this.dataGridView2.ColumnCount = comboBox1.SelectedIndex + 2;
-
-            //добавляем строки
-            for (int i=0; i<comboBox1.SelectedIndex+2; i++)
-            {
-                this.dataGridView1.Rows.Add();
-                this.dataGridView2.Rows.Add();
->>>>>>> Добавьте файлы проекта.
             }
 
             //устанавливаем размеры строк
             for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
             {
                 dataGridView1.Columns[i].Width = colWidth;
-<<<<<<< HEAD
 
 
                 dataGridView1.Width = colWidth * this.dataGridView1.ColumnCount;
@@ -251,15 +216,6 @@ namespace WindowsFormsApplication2
 
                 dataGridView2.Height = rowHeight * this.dataGridView2.RowCount;
 
-=======
-                dataGridView2.Columns[i].Width = colWidth;
-
-                dataGridView1.Width = colWidth * this.dataGridView1.ColumnCount;
-                dataGridView2.Width = colWidth * this.dataGridView2.ColumnCount;
-
-                dataGridView1.Height = rowHeight * this.dataGridView1.ColumnCount;
-                dataGridView2.Height = rowHeight * this.dataGridView2.ColumnCount;
->>>>>>> Добавьте файлы проекта.
             }
         }
 
@@ -272,7 +228,6 @@ namespace WindowsFormsApplication2
         {
             if(comboBox2.SelectedIndex<3)
             {
-<<<<<<< HEAD
                 label3.Visible = false;
                 label5.Visible = true;
                 label7.Visible = true;
@@ -290,17 +245,6 @@ namespace WindowsFormsApplication2
                 label7.Visible = false;
                 comboBox3.Visible = false;
                 comboBox5.Visible = false;
-=======
-                dataGridView1.Visible = true;
-                dataGridView2.Visible = true;
-                label3.Visible = false;
-                textBox1.Visible = false;
-            }
-            else
-            {
-                dataGridView2.Visible = false;
-                label3.Visible = true;
->>>>>>> Добавьте файлы проекта.
                 textBox1.Visible = true;
             }
         }
@@ -321,30 +265,20 @@ namespace WindowsFormsApplication2
             this.dataGridView1.Rows.Clear();
             this.dataGridView2.Rows.Clear();
             this.dataGridView3.Rows.Clear();
-<<<<<<< HEAD
             dataGridView3.Visible = false;
 
             //задаем кол-во столбцов
             this.dataGridView1.ColumnCount = comboBox4.SelectedIndex + 2;
             this.dataGridView2.ColumnCount = comboBox5.SelectedIndex + 2;
-=======
-
-            //задаем кол-во столбцов
-            this.dataGridView1.ColumnCount = comboBox1.SelectedIndex + 2;
-            this.dataGridView2.ColumnCount = comboBox1.SelectedIndex + 2;
->>>>>>> Добавьте файлы проекта.
 
             //добавляем строки
             for (int i = 0; i < comboBox1.SelectedIndex + 2; i++)
             {
                 this.dataGridView1.Rows.Add();
-<<<<<<< HEAD
             }
 
             for (int i = 0; i < comboBox3.SelectedIndex + 2; i++)
             {
-=======
->>>>>>> Добавьте файлы проекта.
                 this.dataGridView2.Rows.Add();
             }
 
@@ -360,7 +294,6 @@ namespace WindowsFormsApplication2
         {
 
         }
-<<<<<<< HEAD
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -554,7 +487,3 @@ namespace WindowsFormsApplication2
 
 
     }
-=======
-    }
-}
->>>>>>> Добавьте файлы проекта.
