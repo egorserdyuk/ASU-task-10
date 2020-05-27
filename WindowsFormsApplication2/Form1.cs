@@ -446,6 +446,40 @@ namespace WindowsFormsApplication2
                     }
                 }
             }
+
+            //сложение матрицы с числом
+            if (comboBox2.SelectedIndex == 3)
+            {
+                warning_label.Visible = false;
+                int m = dataGridView1.RowCount;
+                int q = dataGridView1.ColumnCount;
+                dataGridView3.Visible = true;
+                double value;
+                for (int i = 0; i < m; i++)
+                    for (int j = 0; j < q; j++)
+                    {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                        value += Convert.ToDouble(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                    }
+             }
+
+            //вычитание из матрицы числа
+            if (comboBox2.SelectedIndex == 4)
+            {
+                warning_label.Visible = false;
+                int m = dataGridView1.RowCount;
+                int q = dataGridView1.ColumnCount;
+                dataGridView3.Visible = true;
+                double value;
+                for (int i = 0; i < m; i++)
+                    for (int j = 0; j < q; j++)
+                    {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                        value -= Convert.ToDouble(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                    }
+             }
         }    
 
 
