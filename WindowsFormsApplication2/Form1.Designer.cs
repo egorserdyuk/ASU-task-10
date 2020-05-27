@@ -30,7 +30,10 @@
         {
             this.calc_tab = new System.Windows.Forms.TabControl();
             this.generic_calc = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.bin_btn = new System.Windows.Forms.Button();
+=======
+>>>>>>> Добавьте файлы проекта.
             this.button4 = new System.Windows.Forms.Button();
             this.hex_btn = new System.Windows.Forms.Button();
             this.sqrt_btn = new System.Windows.Forms.Button();
@@ -56,11 +59,14 @@
             this.two_btn = new System.Windows.Forms.Button();
             this.one_btn = new System.Windows.Forms.Button();
             this.matrix_calc = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.warning_label = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+=======
+>>>>>>> Добавьте файлы проекта.
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -88,8 +94,12 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+=======
+            this.bin_btn = new System.Windows.Forms.Button();
+>>>>>>> Добавьте файлы проекта.
             this.calc_tab.SuspendLayout();
             this.generic_calc.SuspendLayout();
             this.matrix_calc.SuspendLayout();
@@ -145,6 +155,7 @@
             this.generic_calc.TabIndex = 0;
             this.generic_calc.Text = "Обычный";
             // 
+<<<<<<< HEAD
             // bin_btn
             // 
             this.bin_btn.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -159,6 +170,8 @@
             this.bin_btn.Text = "BIN";
             this.bin_btn.UseVisualStyleBackColor = false;
             // 
+=======
+>>>>>>> Добавьте файлы проекта.
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -499,6 +512,7 @@
             // matrix_calc
             // 
             this.matrix_calc.BackColor = System.Drawing.SystemColors.ButtonFace;
+<<<<<<< HEAD
             this.matrix_calc.Controls.Add(this.comboBox5);
             this.matrix_calc.Controls.Add(this.label7);
             this.matrix_calc.Controls.Add(this.warning_label);
@@ -506,6 +520,8 @@
             this.matrix_calc.Controls.Add(this.label6);
             this.matrix_calc.Controls.Add(this.comboBox3);
             this.matrix_calc.Controls.Add(this.label5);
+=======
+>>>>>>> Добавьте файлы проекта.
             this.matrix_calc.Controls.Add(this.button2);
             this.matrix_calc.Controls.Add(this.button1);
             this.matrix_calc.Controls.Add(this.label4);
@@ -526,6 +542,7 @@
             this.matrix_calc.Text = "Матрицы";
             this.matrix_calc.Click += new System.EventHandler(this.matrix_calc_Click);
             // 
+<<<<<<< HEAD
             // warning_label
             // 
             this.warning_label.AutoSize = true;
@@ -587,6 +604,8 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Размерность\n матрицы B";
             // 
+=======
+>>>>>>> Добавьте файлы проекта.
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -596,7 +615,10 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Результат";
             this.button2.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.button2.Click += new System.EventHandler(this.button2_Click);
+=======
+>>>>>>> Добавьте файлы проекта.
             // 
             // button1
             // 
@@ -823,15 +845,22 @@
             "3",
             "4",
             "5"});
+<<<<<<< HEAD
             this.comboBox1.Location = new System.Drawing.Point(95, 38);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(38, 21);
+=======
+            this.comboBox1.Location = new System.Drawing.Point(150, 38);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(64, 21);
+>>>>>>> Добавьте файлы проекта.
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(14, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 26);
@@ -863,6 +892,28 @@
             this.comboBox5.Size = new System.Drawing.Size(38, 21);
             this.comboBox5.TabIndex = 23;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+=======
+            this.label1.Location = new System.Drawing.Point(11, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Размерность матрицы A";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // bin_btn
+            // 
+            this.bin_btn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bin_btn.FlatAppearance.BorderSize = 0;
+            this.bin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bin_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bin_btn.Location = new System.Drawing.Point(4, 102);
+            this.bin_btn.Margin = new System.Windows.Forms.Padding(1);
+            this.bin_btn.Name = "bin_btn";
+            this.bin_btn.Size = new System.Drawing.Size(60, 40);
+            this.bin_btn.TabIndex = 24;
+            this.bin_btn.Text = "BIN";
+            this.bin_btn.UseVisualStyleBackColor = false;
+>>>>>>> Добавьте файлы проекта.
             // 
             // Form1
             // 
@@ -944,6 +995,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button bin_btn;
+<<<<<<< HEAD
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox4;
@@ -951,6 +1003,8 @@
         private System.Windows.Forms.Label warning_label;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label7;
+=======
+>>>>>>> Добавьте файлы проекта.
     }
 }
 
