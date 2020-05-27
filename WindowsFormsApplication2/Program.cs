@@ -16,16 +16,6 @@ namespace WindowsFormsApplication2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-            Form form = new Form1();
-            form.DialogResult = DialogResult.Retry;
-
-            while (form.DialogResult == DialogResult.Retry)
-            {
-                form.DialogResult = DialogResult.OK;
-                form = new Form1();
-                Application.Run(form);
-            }
         }
     }
 }
