@@ -227,7 +227,9 @@ namespace WindowsFormsApplication2
             {
                 label3.Visible = false;
                 label5.Visible = true;
+                label7.Visible = true;
                 comboBox3.Visible = true;
+                comboBox5.Visible = true;
                 textBox1.Visible = false;
 
             }
@@ -236,7 +238,9 @@ namespace WindowsFormsApplication2
                 dataGridView2.Visible = false;
                 label3.Visible = true;
                 label5.Visible = false;
+                label7.Visible = false;
                 comboBox3.Visible = false;
+                comboBox5.Visible = false;
                 textBox1.Visible = true;
             }
         }
