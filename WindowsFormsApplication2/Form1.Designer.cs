@@ -61,6 +61,7 @@
             this.two_btn = new System.Windows.Forms.Button();
             this.one_btn = new System.Windows.Forms.Button();
             this.matrix_calc = new System.Windows.Forms.TabPage();
+            this.warning_label2 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.warning_label = new System.Windows.Forms.Label();
@@ -95,7 +96,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.warning_label2 = new System.Windows.Forms.Label();
             this.calc_tab.SuspendLayout();
             this.generic_calc.SuspendLayout();
             this.matrix_calc.SuspendLayout();
@@ -590,6 +590,18 @@
             this.matrix_calc.Text = "Матрицы";
             this.matrix_calc.Click += new System.EventHandler(this.matrix_calc_Click);
             // 
+            // warning_label2
+            // 
+            this.warning_label2.AutoSize = true;
+            this.warning_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.warning_label2.ForeColor = System.Drawing.Color.Red;
+            this.warning_label2.Location = new System.Drawing.Point(177, 313);
+            this.warning_label2.Name = "warning_label2";
+            this.warning_label2.Size = new System.Drawing.Size(247, 15);
+            this.warning_label2.TabIndex = 24;
+            this.warning_label2.Text = "Размерность матриц должна совпадать!\r\n";
+            this.warning_label2.Visible = false;
+            // 
             // comboBox5
             // 
             this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -721,6 +733,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
+            this.dataGridView3.Enabled = false;
             this.dataGridView3.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView3.Location = new System.Drawing.Point(14, 225);
             this.dataGridView3.Name = "dataGridView3";
@@ -801,6 +814,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(65, 65);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.Visible = false;
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellValueChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -878,6 +892,7 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // Column1
             // 
@@ -928,18 +943,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Размерность\n матрицы A";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // warning_label2
-            // 
-            this.warning_label2.AutoSize = true;
-            this.warning_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.warning_label2.ForeColor = System.Drawing.Color.Red;
-            this.warning_label2.Location = new System.Drawing.Point(177, 313);
-            this.warning_label2.Name = "warning_label2";
-            this.warning_label2.Size = new System.Drawing.Size(247, 15);
-            this.warning_label2.TabIndex = 24;
-            this.warning_label2.Text = "Размерность матриц должна совпадать!\r\n";
-            this.warning_label2.Visible = false;
             // 
             // Form1
             // 

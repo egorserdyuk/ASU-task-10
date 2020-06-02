@@ -62,7 +62,7 @@ namespace WindowsFormsApplication2
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
+
 
             //очистка матриц
             this.dataGridView1.Rows.Clear();
@@ -75,11 +75,11 @@ namespace WindowsFormsApplication2
 
 
             //задаем кол-во столбцов
-            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex+2;
+            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex + 2;
             //this.dataGridView3.ColumnCount = comboBox2.SelectedIndex + 2;
 
             //добавляем строки
-            for (int i=0; i< comboBox1.SelectedIndex + 2; i++)
+            for (int i = 0; i < comboBox1.SelectedIndex + 2; i++)
             {
                 this.dataGridView1.Rows.Add();
                 this.dataGridView3.Rows.Add();
@@ -89,10 +89,10 @@ namespace WindowsFormsApplication2
             for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
             {
                 dataGridView1.Columns[i].Width = colWidth;
-                
+
 
                 dataGridView1.Width = colWidth * this.dataGridView1.ColumnCount;
-                
+
 
                 dataGridView1.Height = rowHeight * this.dataGridView1.RowCount;
 
@@ -183,7 +183,7 @@ namespace WindowsFormsApplication2
 
             //очистка матриц
             this.dataGridView2.Rows.Clear();
-            
+
 
             //видимость матриц
 
@@ -223,7 +223,7 @@ namespace WindowsFormsApplication2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox2.SelectedIndex<3)
+            if (comboBox2.SelectedIndex < 3)
             {
                 label3.Visible = false;
                 label5.Visible = true;
@@ -255,6 +255,31 @@ namespace WindowsFormsApplication2
 
         }
 
+        void clear()
+        {
+            //очистка матриц
+            this.dataGridView1.Rows.Clear();
+            this.dataGridView2.Rows.Clear();
+            this.dataGridView3.Rows.Clear();
+            dataGridView3.Visible = false;
+
+            //задаем кол-во столбцов
+            this.dataGridView1.ColumnCount = comboBox4.SelectedIndex + 2;
+            this.dataGridView2.ColumnCount = comboBox5.SelectedIndex + 2;
+
+            //добавляем строки
+            for (int i = 0; i < comboBox1.SelectedIndex + 2; i++)
+            {
+                this.dataGridView1.Rows.Add();
+            }
+
+            for (int i = 0; i < comboBox3.SelectedIndex + 2; i++)
+            {
+                this.dataGridView2.Rows.Add();
+            }
+
+            textBox1.Text = "";
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //очистка матриц
@@ -992,6 +1017,30 @@ namespace WindowsFormsApplication2
             {
                 e.Handled = true;
             }
+        }
+
+        
+
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+                    if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                    if (!char.IsDigit(Convert.ToChar(dataGridView1[e.ColumnIndex, e.RowIndex].Value)))
+                    {
+                        MessageBox.Show("Вводите только цифры");
+                        clear();
+                    }
+                
+            
+        }
+
+        private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                if (!char.IsDigit(Convert.ToChar(dataGridView2[e.ColumnIndex, e.RowIndex].Value)))
+                {
+                    MessageBox.Show("Вводите только цифры");
+                    clear();
+                }
         }
     }
 }
