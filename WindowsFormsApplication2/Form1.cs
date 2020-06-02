@@ -401,7 +401,12 @@ namespace WindowsFormsApplication2
 
                     dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
                 }
-                if (textBox1.Text != "")
+                if (textBox1.Text == "0")
+                {
+                    dataGridView3.Visible = false;
+                    MessageBox.Show("Делить на 0 нельзя!!!");
+                }
+                else if (textBox1.Text != "" || textBox1.Text != "0")
                 {
                     dataGridView3.Visible = true;
                     warning_label.Visible = false;
