@@ -831,7 +831,7 @@ namespace WindowsFormsApplication2
                     
                     int num = int.Parse(p1);
                     long factorial = 1;
-                    if (num > 25)
+                    if (num > 20)
                     {
                         MessageBox.Show("Слишком большое число");
                         this.DialogResult = DialogResult.Retry;
