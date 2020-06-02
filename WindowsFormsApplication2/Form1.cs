@@ -293,24 +293,7 @@ namespace WindowsFormsApplication2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.dataGridView3.Rows.Clear();
-            this.dataGridView3.ColumnCount = dataGridView2.ColumnCount;
-
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                this.dataGridView3.Rows.Add();
-            }
-
-            for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
-            {
-                dataGridView3.Columns[i].Width = colWidth;
-
-                dataGridView3.Width = colWidth * this.dataGridView2.ColumnCount;
-
-                dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
-            }
-
-            dataGridView3.Visible = true;
+            
             //умножение матриц
             if (comboBox2.SelectedIndex == 0)
             {
@@ -320,7 +303,26 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
+                    this.dataGridView3.Rows.Clear();
+                    this.dataGridView3.ColumnCount = dataGridView2.ColumnCount;
+
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        this.dataGridView3.Rows.Add();
+                    }
+
+                    for (int i = 0; i < this.dataGridView2.ColumnCount; i++)
+                    {
+                        dataGridView3.Columns[i].Width = colWidth;
+
+                        dataGridView3.Width = colWidth * this.dataGridView2.ColumnCount;
+
+                        dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                    }
+
+                    dataGridView3.Visible = true;
                     warning_label.Visible = false;
+                    warning_label2.Visible = false;
                     int m = dataGridView1.RowCount;
                     int q = dataGridView2.ColumnCount;
                     int n = dataGridView2.RowCount;
@@ -344,47 +346,111 @@ namespace WindowsFormsApplication2
             //умножение матрицы на число
             if (comboBox2.SelectedIndex == 5)
             {
-                warning_label.Visible = false;
-                int m = dataGridView1.RowCount;
-                int q = dataGridView1.ColumnCount;
-                dataGridView3.Visible = true;
-                double value;
-                for (int i = 0; i < m; i++)
-                for (int j = 0; j < q; j++)
+                this.dataGridView3.Rows.Clear();
+                this.dataGridView3.ColumnCount = dataGridView1.ColumnCount;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    value = Convert.ToInt32(dataGridView1[j, i].Value);
-                    value *= Convert.ToDouble(textBox1.Text);
-                    dataGridView3[j, i].Value = value;
+                    this.dataGridView3.Rows.Add();
                 }
+
+                for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                {
+                    dataGridView3.Columns[i].Width = colWidth;
+
+                    dataGridView3.Width = colWidth * this.dataGridView1.ColumnCount;
+
+                    dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                }
+                if (textBox1.Text != "")
+                {
+                    dataGridView3.Visible = true;
+                    warning_label.Visible = false;
+                    warning_label2.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                        for (int j = 0; j < q; j++)
+                        {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                            value *= Convert.ToDouble(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                        }
+                }
+                else dataGridView3.Visible = false;
             }
 
             //деление матрицы на число
             if (comboBox2.SelectedIndex == 6)
             {
-                warning_label.Visible = false;
-                int m = dataGridView1.RowCount;
-                int q = dataGridView1.ColumnCount;
-                dataGridView3.Visible = true;
-                double value;
-                for (int i = 0; i < m; i++)
-                for (int j = 0; j < q; j++)
+                this.dataGridView3.Rows.Clear();
+                this.dataGridView3.ColumnCount = dataGridView1.ColumnCount;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    value = Convert.ToInt32(dataGridView1[j, i].Value);
-                    value /= Convert.ToInt32(textBox1.Text);
-                    dataGridView3[j, i].Value = value;
+                    this.dataGridView3.Rows.Add();
                 }
+
+                for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                {
+                    dataGridView3.Columns[i].Width = colWidth;
+
+                    dataGridView3.Width = colWidth * this.dataGridView1.ColumnCount;
+
+                    dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                }
+                if (textBox1.Text != "")
+                {
+                    dataGridView3.Visible = true;
+                    warning_label.Visible = false;
+                    warning_label2.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                        for (int j = 0; j < q; j++)
+                        {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                            value /= Convert.ToInt32(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                        }
+                }
+                else dataGridView3.Visible = false;
             }
 
+            //сложение матриц
             if (comboBox2.SelectedIndex == 1)
             {
-                if (dataGridView1.ColumnCount != dataGridView2.RowCount)
+                if ((dataGridView1.ColumnCount != dataGridView2.ColumnCount) || (dataGridView1.RowCount != dataGridView2.RowCount))
                 {
-                    this.warning_label.Visible = true;
+                    this.warning_label2.Visible = true;
                     dataGridView3.Visible = false;
                 }
                 else
                 {
+                    this.dataGridView3.Rows.Clear();
+                    this.dataGridView3.ColumnCount = dataGridView2.ColumnCount;
+
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        this.dataGridView3.Rows.Add();
+                    }
+
+                    for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                    {
+                        dataGridView3.Columns[i].Width = colWidth;
+
+                        dataGridView3.Width = colWidth * this.dataGridView2.ColumnCount;
+
+                        dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                    }
+
+                    dataGridView3.Visible = true;
                     warning_label.Visible = false;
+                    warning_label2.Visible = false;
                     int m = dataGridView1.RowCount;
                     int q = dataGridView1.ColumnCount;
                     dataGridView3.Visible = true;
@@ -399,62 +465,125 @@ namespace WindowsFormsApplication2
                 }
             }
 
+            //разность матриц
             if (comboBox2.SelectedIndex == 2)
             {
-                if (dataGridView1.ColumnCount != dataGridView2.RowCount)
+                if ((dataGridView1.ColumnCount != dataGridView2.ColumnCount) || (dataGridView1.RowCount != dataGridView2.RowCount))
                 {
-                    this.warning_label.Visible = true;
+                    this.warning_label2.Visible = true;
                     dataGridView3.Visible = false;
                 }
                 else
                 {
-                    warning_label.Visible = false;
-                    int m = dataGridView1.RowCount;
-                    int q = dataGridView1.ColumnCount;
-                    dataGridView3.Visible = true;
-                    double value;
-                    for (int i = 0; i < m; i++)
-                    for (int j = 0; j < q; j++)
+                    this.dataGridView3.Rows.Clear();
+                    this.dataGridView3.ColumnCount = dataGridView2.ColumnCount;
+
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        value = Convert.ToDouble(dataGridView1[j, i].Value);
-                        value -= Convert.ToDouble(dataGridView2[j, i].Value);
-                        dataGridView3[j, i].Value = value;
+                        this.dataGridView3.Rows.Add();
                     }
+
+                    for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                    {
+                        dataGridView3.Columns[i].Width = colWidth;
+
+                        dataGridView3.Width = colWidth * this.dataGridView2.ColumnCount;
+
+                        dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                    }
+                        dataGridView3.Visible = true;
+                        warning_label.Visible = false;
+                        warning_label2.Visible = false;
+                        int m = dataGridView1.RowCount;
+                        int q = dataGridView1.ColumnCount;
+                        dataGridView3.Visible = true;
+                        double value;
+                        for (int i = 0; i < m; i++)
+                            for (int j = 0; j < q; j++)
+                            {
+                                value = Convert.ToDouble(dataGridView1[j, i].Value);
+                                value -= Convert.ToDouble(dataGridView2[j, i].Value);
+                                dataGridView3[j, i].Value = value;
+                            }
                 }
             }
 
             //сложение матрицы с числом
             if (comboBox2.SelectedIndex == 3)
             {
-                warning_label.Visible = false;
-                int m = dataGridView1.RowCount;
-                int q = dataGridView1.ColumnCount;
-                dataGridView3.Visible = true;
-                double value;
-                for (int i = 0; i < m; i++)
-                for (int j = 0; j < q; j++)
+                this.dataGridView3.Rows.Clear();
+                this.dataGridView3.ColumnCount = dataGridView1.ColumnCount;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    value = Convert.ToInt32(dataGridView1[j, i].Value);
-                    value += Convert.ToDouble(textBox1.Text);
-                    dataGridView3[j, i].Value = value;
+                    this.dataGridView3.Rows.Add();
                 }
+
+                for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                {
+                    dataGridView3.Columns[i].Width = colWidth;
+
+                    dataGridView3.Width = colWidth * this.dataGridView1.ColumnCount;
+
+                    dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                }
+                if (textBox1.Text != "")
+                {
+                    dataGridView3.Visible = true;
+                    warning_label.Visible = false;
+                    warning_label2.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                        for (int j = 0; j < q; j++)
+                        {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                            value += Convert.ToDouble(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                        }
+                }
+                else dataGridView3.Visible = false;
             }
 
             //вычитание из матрицы числа
             if (comboBox2.SelectedIndex == 4)
             {
-                warning_label.Visible = false;
-                int m = dataGridView1.RowCount;
-                int q = dataGridView1.ColumnCount;
-                dataGridView3.Visible = true;
-                double value;
-                for (int i = 0; i < m; i++)
-                for (int j = 0; j < q; j++)
+                this.dataGridView3.Rows.Clear();
+                this.dataGridView3.ColumnCount = dataGridView1.ColumnCount;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    value = Convert.ToInt32(dataGridView1[j, i].Value);
-                    value -= Convert.ToDouble(textBox1.Text);
-                    dataGridView3[j, i].Value = value;
+                    this.dataGridView3.Rows.Add();
                 }
+
+                for (int i = 0; i < this.dataGridView1.ColumnCount; i++)
+                {
+                    dataGridView3.Columns[i].Width = colWidth;
+
+                    dataGridView3.Width = colWidth * this.dataGridView1.ColumnCount;
+
+                    dataGridView3.Height = rowHeight * this.dataGridView1.RowCount;
+                }
+                if (textBox1.Text != "")
+                {
+                    dataGridView3.Visible = true;
+                    warning_label.Visible = false;
+                    warning_label2.Visible = false;
+                    int m = dataGridView1.RowCount;
+                    int q = dataGridView1.ColumnCount;
+                    dataGridView3.Visible = true;
+                    double value;
+                    for (int i = 0; i < m; i++)
+                        for (int j = 0; j < q; j++)
+                        {
+                            value = Convert.ToInt32(dataGridView1[j, i].Value);
+                            value -= Convert.ToDouble(textBox1.Text);
+                            dataGridView3[j, i].Value = value;
+                        }
+                }
+                else dataGridView3.Visible = false;
             }
         
 
@@ -675,23 +804,44 @@ namespace WindowsFormsApplication2
                     textBox5.Text = Convert.ToString(mu);
                     break;
                 case '%':
-                    double pe = Convert.ToDouble(p1) % Convert.ToDouble(p2);
-                    textBox5.Text = Convert.ToString(pe);
-                    break;
+                    if (p2 != "0")
+                    {
+                        double pe = Convert.ToDouble(p1) % Convert.ToDouble(p2);
+                        textBox5.Text = Convert.ToString(pe);
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Делить на 0 нельзя!!!");
+                        this.DialogResult = DialogResult.Retry;
+                        this.Close();
+                        break;
+                    }
                 case 's':
                     double ss = Math.Sqrt(Convert.ToDouble(p1));
                     textBox5.Text = Convert.ToString(ss);
                     break;
 
                 case '!':
+                    
                     int num = int.Parse(p1);
-                    int factorial = 1;
-                    for (int i = 1; i <= num; i++)
+                    long factorial = 1;
+                    if (num > 25)
                     {
-                        factorial *= i;                                            
+                        MessageBox.Show("Слишком большое число");
+                        this.DialogResult = DialogResult.Retry;
+                        this.Close();
+                        break;
                     }
-                    textBox5.Text = Convert.ToString(factorial);
-                    break;
+                    else
+                    {
+                        for (int i = 1; i <= num; i++)
+                        {
+                        factorial *= i;                                            
+                        }
+                        textBox5.Text = Convert.ToString(factorial);
+                        break;
+                    }
 
                 case '2':
                     int bi = int.Parse(p1);
@@ -827,6 +977,16 @@ namespace WindowsFormsApplication2
             textBox4.Text = "hex";
             textBox3.Text = "-";
             point_btn.Enabled = !point_btn.Enabled;
+        }
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if(!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

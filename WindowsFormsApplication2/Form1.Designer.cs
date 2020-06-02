@@ -30,6 +30,14 @@
         {
             this.calc_tab = new System.Windows.Forms.TabControl();
             this.generic_calc = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.bin_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.hex_btn = new System.Windows.Forms.Button();
@@ -87,14 +95,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.warning_label2 = new System.Windows.Forms.Label();
             this.calc_tab.SuspendLayout();
             this.generic_calc.SuspendLayout();
             this.matrix_calc.SuspendLayout();
@@ -154,6 +155,79 @@
             this.generic_calc.Size = new System.Drawing.Size(506, 367);
             this.generic_calc.TabIndex = 0;
             this.generic_calc.Text = "Обычный";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(97, 78);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(153, 20);
+            this.textBox5.TabIndex = 32;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(42, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 15);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Ответ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(8, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 15);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Значение 2";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(52, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 15);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Знак";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(8, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 15);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Значение 1";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(97, 29);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(29, 20);
+            this.textBox4.TabIndex = 27;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(97, 52);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(153, 20);
+            this.textBox3.TabIndex = 26;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(97, 6);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(153, 20);
+            this.textBox2.TabIndex = 25;
             // 
             // bin_btn
             // 
@@ -488,6 +562,7 @@
             // matrix_calc
             // 
             this.matrix_calc.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.matrix_calc.Controls.Add(this.warning_label2);
             this.matrix_calc.Controls.Add(this.comboBox5);
             this.matrix_calc.Controls.Add(this.label7);
             this.matrix_calc.Controls.Add(this.warning_label);
@@ -545,7 +620,7 @@
             this.warning_label.AutoSize = true;
             this.warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.warning_label.ForeColor = System.Drawing.Color.Red;
-            this.warning_label.Location = new System.Drawing.Point(204, 315);
+            this.warning_label.Location = new System.Drawing.Point(207, 313);
             this.warning_label.Name = "warning_label";
             this.warning_label.Size = new System.Drawing.Size(217, 30);
             this.warning_label.TabIndex = 21;
@@ -690,6 +765,7 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 11;
             this.textBox1.Visible = false;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // label3
             // 
@@ -853,78 +929,17 @@
             this.label1.Text = "Размерность\n матрицы A";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox2
+            // warning_label2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(97, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(97, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 26;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(97, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(29, 20);
-            this.textBox4.TabIndex = 27;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(8, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 15);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Значение 1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(52, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 15);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Знак";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(8, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 15);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Значение 2";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(42, 77);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 15);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Ответ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(97, 78);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 20);
-            this.textBox5.TabIndex = 32;
+            this.warning_label2.AutoSize = true;
+            this.warning_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.warning_label2.ForeColor = System.Drawing.Color.Red;
+            this.warning_label2.Location = new System.Drawing.Point(177, 313);
+            this.warning_label2.Name = "warning_label2";
+            this.warning_label2.Size = new System.Drawing.Size(247, 15);
+            this.warning_label2.TabIndex = 24;
+            this.warning_label2.Text = "Размерность матриц должна совпадать!\r\n";
+            this.warning_label2.Visible = false;
             // 
             // Form1
             // 
@@ -1019,6 +1034,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label warning_label2;
     }
 }
 
